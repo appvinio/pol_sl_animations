@@ -71,7 +71,6 @@ linter:
     - join_return_with_assignment
     - leading_newlines_in_multiline_strings
     - library_prefixes
-    - library_private_types_in_public_api
     - non_constant_identifier_names
     - noop_primitive_operations
     - null_closures
@@ -89,7 +88,6 @@ linter:
     - prefer_final_fields
     - prefer_final_in_for_each
     - prefer_final_locals
-    - prefer_final_parameters
     - prefer_for_elements_to_map_fromIterable
     - prefer_foreach
     - prefer_function_declarations_over_variables
