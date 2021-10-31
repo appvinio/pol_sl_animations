@@ -38,31 +38,31 @@ class CustomTextStyle extends TextStyle {
     final List<String>? fontFamilyFallback,
     final String? package,
   }) : super(
-    inherit: inherit,
-    color: color,
-    backgroundColor: backgroundColor,
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    fontStyle: fontStyle,
-    letterSpacing: letterSpacing,
-    wordSpacing: wordSpacing,
-    leadingDistribution: leadingDistribution,
-    textBaseline: textBaseline,
-    height: height,
-    locale: locale,
-    foreground: foreground,
-    background: background,
-    shadows: shadows,
-    fontFeatures: fontFeatures,
-    decoration: decoration,
-    decorationColor: decorationColor,
-    decorationStyle: decorationStyle,
-    decorationThickness: decorationThickness,
-    debugLabel: debugLabel,
-    fontFamily: fontFamily,
-    fontFamilyFallback: fontFamilyFallback,
-    package: package,
-  );
+          inherit: inherit,
+          color: color,
+          backgroundColor: backgroundColor,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          fontStyle: fontStyle,
+          letterSpacing: letterSpacing,
+          wordSpacing: wordSpacing,
+          leadingDistribution: leadingDistribution,
+          textBaseline: textBaseline,
+          height: height,
+          locale: locale,
+          foreground: foreground,
+          background: background,
+          shadows: shadows,
+          fontFeatures: fontFeatures,
+          decoration: decoration,
+          decorationColor: decorationColor,
+          decorationStyle: decorationStyle,
+          decorationThickness: decorationThickness,
+          debugLabel: debugLabel,
+          fontFamily: fontFamily,
+          fontFamilyFallback: fontFamilyFallback,
+          package: package,
+        );
 
   CustomTextStyle get s12 => copyWith(fontSize: 12);
 
@@ -98,7 +98,9 @@ class CustomTextStyle extends TextStyle {
 
   CustomTextStyle get colorHintDefault => copyWith(color: CustomColors.whiteColor);
 
-  CustomTextStyle get colorBlack => copyWith(color: CustomColors.whiteColor);
+  CustomTextStyle get colorBlack => copyWith(color: CustomColors.blackColor);
+
+  CustomTextStyle get colorGrey => copyWith(color: CustomColors.greyColor);
 
   CustomTextStyle get h17 => copyWith(height: 1.7);
 

@@ -2,11 +2,15 @@ import 'package:aplikacja_sklep/features/shop/domain/entities/product.dart';
 
 class ProductModel extends Product {
   const ProductModel({
+    required this.id,
     required this.description,
     required this.name,
     required this.price,
     required this.url,
   });
+
+  @override
+  final int id;
 
   @override
   final String description;
@@ -22,6 +26,7 @@ class ProductModel extends Product {
 
   @override
   List<Object?> get props => [
+        id,
         description,
         name,
         price,
