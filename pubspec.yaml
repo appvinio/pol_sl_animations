@@ -51,6 +51,8 @@ dependencies:
     git:
       url: https://github.com/appvinio/pretty_dio_logger.git
   shared_preferences: 2.0.8
+  shimmer: 2.0.0
+  transparent_image: 2.0.0
 
 dev_dependencies:
   build_runner: 2.1.2

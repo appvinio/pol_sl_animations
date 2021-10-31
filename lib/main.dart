@@ -1,3 +1,4 @@
+import 'package:aplikacja_sklep/features/shop/presentation/screens/shop_screen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikacja_sklep/injection_container.dart';
@@ -31,9 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       navigatorObservers: [BotToastNavigatorObserver()],
       builder: BotToastInit(),
-      home: Scaffold(
-        body: Container(),
-      ),
+      home: const ShopScreen(),
     );
   }
 }

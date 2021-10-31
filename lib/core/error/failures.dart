@@ -6,8 +6,12 @@ abstract class Failure extends Equatable {
   @override
   List<Object> get props => [errorMessage];
 
-  String get errorMessage;
+  String get errorMessage => '';
 
   @override
   bool? get stringify => true;
+}
+
+class FetchProductsFailure extends Failure {
+  const FetchProductsFailure();
 }

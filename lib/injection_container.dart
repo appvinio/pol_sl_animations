@@ -1,3 +1,4 @@
+import 'package:aplikacja_sklep/features/shop/injection_container.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -12,7 +13,7 @@ final sl = GetIt.instance;
 
 const globalDio = 'global';
 
-class InjectionContainer extends Injector {}
+class InjectionContainer extends Injector with ShopInjector {}
 
 ValidationBuilder get validator => sl<ValidationBuilder>(param1: false);
 

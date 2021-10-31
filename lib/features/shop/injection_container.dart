@@ -1,21 +1,25 @@
-import '../../injection_container.dart';
-import 'data/data_sources/data_source.dart';
-import 'data/repositories/repository_impl.dart';
-import 'domain/repositories/repository.dart';
-import 'domain/use_cases/use_case.dart';
+import 'package:aplikacja_sklep/features/shop/data/data_sources/data_source.dart';
+import 'package:aplikacja_sklep/features/shop/data/repositories/repository_impl.dart';
+import 'package:aplikacja_sklep/features/shop/domain/repositories/repository.dart';
+import 'package:aplikacja_sklep/features/shop/domain/use_cases/fetch_products_use_case.dart';
+import 'package:aplikacja_sklep/features/shop/presentation/blocs/fetch_products_bloc.dart';
+import 'package:aplikacja_sklep/injection_container.dart';
 
-mixin NewFeatureInjector on Injector {
+mixin ShopInjector on Injector {
   @override
   Future<void> init() async {
     await super.init();
 
+    // blocs
+    sl.registerFactory(() => FetchProductsBloc(fetchProductsUseCase: sl()));
+
     // use cases
-    sl.registerLazySingleton(() => NewUseCase(repository: sl()));
+    sl.registerLazySingleton(() => FetchProductsUseCase(repository: sl()));
 
     // repositories
     sl.registerLazySingleton<Repository>(() => RepositoryImpl(dataSource: sl()));
 
     // data sources
-    sl.registerLazySingleton<DataSource>(() => DataSourceImpl(source: sl()));
+    sl.registerLazySingleton<DataSource>(() => DataSourceImpl());
   }
 }
