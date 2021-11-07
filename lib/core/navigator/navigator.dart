@@ -16,10 +16,15 @@ class CustomNavigator {
     final TransitionType? transition = defaultTransition,
   }) {
     final route = ModalRoute?.of(context)?.settings.name ?? '';
-    final targetPath = (route.split('/')..removeLast()..add(path)).join('/');
+    final targetPath = (route.split('/')
+          ..removeLast()
+          ..add(path))
+        .join('/');
     _defineRoute(targetPath, transition);
     return router.navigateTo(context, targetPath,
-        transition: transition, replace: true, routeSettings: RouteSettings(arguments: widget));
+        transition: transition,
+        replace: true,
+        routeSettings: RouteSettings(arguments: widget));
   }
 
   static Future? _post({
@@ -31,8 +36,12 @@ class CustomNavigator {
     final route = ModalRoute?.of(context)?.settings.name ?? '';
     final targetPath = (route.split('/')..add(path)).join('/');
     _defineRoute(targetPath, transition);
-    return router.navigateTo(context, targetPath,
-        transition: transition, routeSettings: RouteSettings(arguments: widget));
+    return router.navigateTo(
+      context,
+      targetPath,
+      transition: transition,
+      routeSettings: RouteSettings(arguments: widget),
+    );
   }
 
   static Future? _addAboveBaseScreen({
@@ -44,7 +53,8 @@ class CustomNavigator {
     final route = ModalRoute?.of(context)?.settings.name ?? '';
     final targetPath = (route.split('/')..add(path)).join('/');
     _defineRoute(targetPath, transition);
-    Navigator.of(context).popUntil((final route) => route.settings.name == route.settings.name?.split('/').first);
+    Navigator.of(context).popUntil((final route) =>
+        route.settings.name == route.settings.name?.split('/').first);
     return router.navigateTo(
       context,
       targetPath,
@@ -67,8 +77,10 @@ class CustomNavigator {
     );
   }
 
-  static void _defineRoute(final String path, final TransitionType? transition) {
-    router.define(path, handler: Handler(handlerFunc: (final BuildContext? context, final Map<String, dynamic> params) {
+  static void _defineRoute(
+      final String path, final TransitionType? transition) {
+    router.define(path, handler: Handler(handlerFunc:
+        (final BuildContext? context, final Map<String, dynamic> params) {
       if (context != null) {
         return ModalRoute.of(context)?.settings.arguments as Widget?;
       }

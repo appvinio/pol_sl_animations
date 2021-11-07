@@ -12,6 +12,6 @@ abstract class Failure extends Equatable {
   bool? get stringify => true;
 }
 
-class FetchProductsFailure extends Failure {
-  const FetchProductsFailure();
+class FetchCatBreedsFailure extends Failure {
+  const FetchCatBreedsFailure();
 }

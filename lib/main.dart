@@ -1,4 +1,4 @@
-import 'package:aplikacja_sklep/features/shop/presentation/screens/shop_screen.dart';
+import 'package:aplikacja_sklep/features/cats/presentation/screens/cat_breeds_screen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikacja_sklep/injection_container.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       navigatorObservers: [BotToastNavigatorObserver()],
       builder: BotToastInit(),
-      home: const ShopScreen(),
+      home: const CatBreedsScreen(),
     );
   }
 }

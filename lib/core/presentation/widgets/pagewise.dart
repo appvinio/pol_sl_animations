@@ -134,13 +134,13 @@ abstract class Pagewise<T, V, E extends AnyListBloc<T, V>> extends StatefulWidge
   final E? pageLoadController;
 
   @override
-  PagewiseState<E> createState() => PagewiseState<E>();
+  PagewiseState<T, V, E> createState() => PagewiseState<T, V, E>();
 }
 
-class PagewiseState<E extends AnyListBloc> extends State<Pagewise> {
+class PagewiseState<T, V, E extends AnyListBloc<T, V>> extends State<Pagewise<T, V, E>> {
   late E _controller;
 
-  AnyListBloc get _effectiveController => widget.pageLoadController ?? this._controller;
+  AnyListBloc<T, V> get _effectiveController => widget.pageLoadController ?? this._controller;
 
   late VoidCallback _controllerListener;
   late StreamSubscription subscription;
@@ -210,7 +210,7 @@ class PagewiseState<E extends AnyListBloc> extends State<Pagewise> {
         return Container();
       }
       // Otherwise, we return the actual item
-      return widget.itemBuilder(context, DataPagewiseState(this._effectiveController.loadedItems[index]));
+      return widget.itemBuilder(context, DataPagewiseState<T>(this._effectiveController.loadedItems[index]));
     }
   }
 }

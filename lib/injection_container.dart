@@ -1,4 +1,4 @@
-import 'package:aplikacja_sklep/features/shop/injection_container.dart';
+import 'package:aplikacja_sklep/features/cats/injection_container.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -13,18 +13,20 @@ final sl = GetIt.instance;
 
 const globalDio = 'global';
 
-class InjectionContainer extends Injector with ShopInjector {}
+class InjectionContainer extends Injector with CatsInjector {}
 
 ValidationBuilder get validator => sl<ValidationBuilder>(param1: false);
 
-ValidationBuilder get optionalFieldValidator => sl<ValidationBuilder>(param1: true);
+ValidationBuilder get optionalFieldValidator =>
+    sl<ValidationBuilder>(param1: true);
 
 abstract class Injector {
   @mustCallSuper
   Future<void> init() async {
     await Hive.initFlutter();
 
-    sl.registerFactoryParam((final bool param1, final _) => ValidationBuilder(localeName: 'pl', optional: param1));
+    sl.registerFactoryParam((final bool param1, final _) =>
+        ValidationBuilder(localeName: 'pl', optional: param1));
 
     sl.registerLazySingleton<AppConfig>(() => AppConfig.init);
     sl.registerLazySingleton<Dio>(
@@ -34,7 +36,12 @@ abstract class Injector {
           connectTimeout: 15000,
           receiveTimeout: 15000,
         ));
-        dio..options.headers = {"content-type": "application/json", "Accept": "application/json"};
+        dio
+          ..options.headers = {
+            "content-type": "application/json",
+            "Accept": "application/json",
+            "x-api-key": "d604791c-7c62-4fb4-9c00-e0f73a9ea7f0",
+          };
         if (!sl<AppConfig>().silenceLogs) {
           dio.interceptors.add(
             PrettyDioLogger(

@@ -62,7 +62,7 @@ class DevConfig extends AppConfig {
   const DevConfig({required final this.silenceLogs}) : super._();
 
   @override
-  String get apiHostName => ''; // TODO(Mason): add local config
+  String get apiHostName => 'api.thecatapi.com/v1';
 
   @override
   final bool silenceLogs;
@@ -75,7 +75,7 @@ class StagingConfig extends AppConfig {
   const StagingConfig({required final this.silenceLogs}) : super._();
 
   @override
-  String get apiHostName => ''; // TODO(Mason): add local config
+  String get apiHostName => 'api.thecatapi.com/v1';
 
   @override
   final bool silenceLogs;
@@ -88,7 +88,7 @@ class ProdConfig extends AppConfig {
   const ProdConfig({required final this.silenceLogs}) : super._();
 
   @override
-  String get apiHostName => ''; // TODO(Mason): add local config
+  String get apiHostName => 'api.thecatapi.com/v1';
 
   @override
   final bool silenceLogs;
@@ -101,7 +101,7 @@ class LocalConfig extends AppConfig {
   const LocalConfig({required final this.silenceLogs}) : super._();
 
   @override
-  String get apiHostName => ''; // TODO(Mason): add local config
+  String get apiHostName => 'api.thecatapi.com/v1';
 
   @override
   final bool silenceLogs;
