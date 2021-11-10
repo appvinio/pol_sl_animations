@@ -30,60 +30,74 @@ class _CatBreedElementState extends State<CatBreedElement> {
         ).addScreen(context);
       },
       borderRadius: const BorderRadius.all(Radius.circular(16.0)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Hero(
-            transitionOnUserGestures: true,
-            tag: widget.catBreed.id,
-            child: CatImageWidget(
-              catBreedImage: widget.catBreed.image,
-              height: 120,
+      child: DecoratedBox(
+        decoration: const BoxDecoration(
+          color: CustomColors.listElement,
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Hero(
+              transitionOnUserGestures: true,
+              tag: widget.catBreed.id,
+              child: CatImageWidget(
+                catBreedImage: widget.catBreed.image,
+                height: 120,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 16.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: Text(
-                        widget.catBreed.name,
-                        textAlign: TextAlign.left,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: roboto.w800.s16,
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Text(
+                          widget.catBreed.name,
+                          textAlign: TextAlign.left,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: roboto.w800.s16.colorListText,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      isSelected = !isSelected;
-                    });
-                  },
-                  borderRadius: const BorderRadius.all(Radius.circular(16.0)),
-                  child: Ink(
-                    height: 40,
-                    width: 40,
-                    padding: const EdgeInsets.all(4.0),
-                    decoration: const BoxDecoration(
-                      color: CustomColors.whiteColor,
+                  Material(
+                    color: CustomColors.listElement,
+                    borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isSelected = !isSelected;
+                        });
+                      },
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(16.0)),
+                      child: Ink(
+                        height: 40,
+                        width: 40,
+                        decoration: const BoxDecoration(
+                          color: CustomColors.listElement,
+                          borderRadius: BorderRadius.all(Radius.circular(16.0)),
+                        ),
+                        padding: const EdgeInsets.all(4.0),
+                        child: isSelected
+                            ? Assets.images.catPaw
+                                .svg(color: CustomColors.listText)
+                            : Assets.images.catPawOutlined
+                                .svg(color: CustomColors.listText),
+                      ),
                     ),
-                    child: isSelected
-                        ? Assets.images.catPaw.image()
-                        : Assets.images.catPawOutlined.image(),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

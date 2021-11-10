@@ -25,13 +25,22 @@ class _CatBreedsScreenState extends State<CatBreedsScreen>
   @override
   void initState() {
     WidgetsBinding.instance?.addPostFrameCallback((_) {
-      precacheImage(Assets.images.catPaw, context);
-      precacheImage(Assets.images.catPawOutlined, context);
       precachePicture(
         ExactAssetPicture(SvgPicture.svgStringDecoderBuilder,
             Assets.images.catPlaceholderPng.path),
         null,
-      );    });
+      );
+      precachePicture(
+        ExactAssetPicture(
+            SvgPicture.svgStringDecoderBuilder, Assets.images.catPaw.path),
+        null,
+      );
+      precachePicture(
+        ExactAssetPicture(SvgPicture.svgStringDecoderBuilder,
+            Assets.images.catPawOutlined.path),
+        null,
+      );
+    });
     catBreedsBloc = sl()..add(const AnyListRefreshEvent());
     super.initState();
   }
@@ -39,34 +48,43 @@ class _CatBreedsScreenState extends State<CatBreedsScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.whiteColor,
+      backgroundColor: CustomColors.background,
       body: RefreshIndicator(
+        backgroundColor: CustomColors.refreshIndicator,
         onRefresh: () async {
           catBreedsBloc.add(const AnyListRefreshEvent());
         },
-        child: PagewiseGridBlocView<CatBreed, String, CatBreedsBloc>.count(
-          bloc: catBreedsBloc,
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(
-            vertical: 40.0,
-            horizontal: 8.0,
-          ),
-          itemBuilder: (context, state) {
-            if (state is DataPagewiseState<CatBreed>) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 8.0,
-                  horizontal: 8.0,
-                ),
-                child: CatBreedElement(catBreed: state.element),
-              );
-            } else if (state is RefreshPagewiseState) {
-              return const CatBreedLoadingWidget();
-            } else {
-              return const SizedBox();
-            }
-          },
-          crossAxisCount: 2,
+        child: Stack(
+          children: [
+            ListView(
+              physics: const NeverScrollableScrollPhysics(),
+              children: [],
+            ),
+            PagewiseGridBlocView<CatBreed, String, CatBreedsBloc>.count(
+              bloc: catBreedsBloc,
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.symmetric(
+                vertical: 40.0,
+                horizontal: 8.0,
+              ),
+              itemBuilder: (context, state) {
+                if (state is DataPagewiseState<CatBreed>) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 8.0,
+                    ),
+                    child: CatBreedElement(catBreed: state.element),
+                  );
+                } else if (state is RefreshPagewiseState) {
+                  return const CatBreedLoadingWidget();
+                } else {
+                  return const SizedBox();
+                }
+              },
+              crossAxisCount: 2,
+            ),
+          ],
         ),
       ),
     );

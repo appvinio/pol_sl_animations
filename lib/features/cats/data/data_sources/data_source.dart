@@ -18,6 +18,9 @@ class DataSourceImpl extends DataSource {
       'page': params.page,
       'limit': 20,
     });
+
+    /// should not be here but oh well, lets watch cat in a washing machine
+    await Future.delayed(const Duration(seconds: 5));
     return result.data.map((element) => CatBreedModel.fromJson(element)).cast<CatBreed>().toList();
   }
 }

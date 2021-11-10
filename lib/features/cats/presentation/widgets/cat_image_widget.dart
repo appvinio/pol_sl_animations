@@ -1,8 +1,8 @@
 import 'package:aplikacja_sklep/core/style/colors.dart';
 import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed_image.dart';
 import 'package:aplikacja_sklep/gen/assets.gen.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class CatImageWidget extends StatefulWidget {
   // ignore: prefer_const_constructors_in_immutables
@@ -31,10 +31,11 @@ class _CatImageWidgetState extends State<CatImageWidget> {
         borderRadius: const BorderRadius.all(Radius.circular(16.0)),
         child: Flow(
           delegate: _ParallaxFlowDelegate(
-              scrollable: Scrollable.of(context),
-              listItemContext: context,
-              backgroundImageKey: imageKey,
-              imageSize: Size(double.infinity, widget.height)),
+            scrollable: Scrollable.of(context),
+            listItemContext: context,
+            backgroundImageKey: imageKey,
+            imageHeight: widget.catBreedImage?.height?.toDouble() ?? 0,
+          ),
           children: [
             SizedBox(
               key: imageKey,
@@ -60,10 +61,9 @@ class _CatImageWidgetState extends State<CatImageWidget> {
                       right: 0,
                       child: SizedBox(
                         width: double.infinity,
-                        child: FadeInImage.memoryNetwork(
+                        child: CachedNetworkImage(
                           fit: BoxFit.cover,
-                          image: widget.catBreedImage?.url ?? '',
-                          placeholder: kTransparentImage,
+                          imageUrl: widget.catBreedImage?.url ?? 'https',
                         ),
                       ),
                     ),
@@ -82,13 +82,13 @@ class _ParallaxFlowDelegate extends FlowDelegate {
     required this.scrollable,
     required this.listItemContext,
     required this.backgroundImageKey,
-    required this.imageSize,
+    required this.imageHeight,
   }) : super(repaint: scrollable?.position);
 
   final ScrollableState? scrollable;
   final BuildContext listItemContext;
   final GlobalKey backgroundImageKey;
-  final Size imageSize;
+  final double imageHeight;
 
   @override
   BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
@@ -135,9 +135,7 @@ class _ParallaxFlowDelegate extends FlowDelegate {
         ).transform,
       );
     } else {
-      context.paintChild(
-        0,
-      );
+      context.paintChild(0);
     }
   }
 

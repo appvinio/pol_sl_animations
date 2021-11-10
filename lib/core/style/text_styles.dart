@@ -102,6 +102,8 @@ class CustomTextStyle extends TextStyle {
 
   CustomTextStyle get colorGrey => copyWith(color: CustomColors.greyColor);
 
+  CustomTextStyle get colorListText => copyWith(color: CustomColors.listText);
+
   CustomTextStyle get h17 => copyWith(height: 1.7);
 
   CustomTextStyle get h13 => copyWith(height: 1.3);
