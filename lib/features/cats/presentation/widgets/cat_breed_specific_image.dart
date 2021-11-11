@@ -31,8 +31,8 @@ class CatBreedSpecificImage extends StatelessWidget {
               right: 0,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Assets.images.catPlaceholderSvg
-                    .svg(color: CustomColors.greyColor),
+                child: Assets.images.catPlaceholder
+                    .svg(color: CustomColors.primary),
               ),
             ),
             if (breed.image?.url?.isNotEmpty ?? false)

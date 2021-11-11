@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme(
           primary: CustomColors.primary,
           primaryVariant: CustomColors.primary,
-          secondary: CustomColors.secondary,
+          secondary: CustomColors.primary,
           secondaryVariant: CustomColors.secondary,
           surface: CustomColors.hint,
           background: CustomColors.background,

@@ -47,10 +47,15 @@ class _CatImageWidgetState extends State<CatImageWidget> {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Assets.images.catPlaceholderSvg
-                          .svg(color: CustomColors.greyColor),
+                    child: DecoratedBox(
+                      decoration: const BoxDecoration(
+                        color: CustomColors.refreshIndicator
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Assets.images.catPlaceholder
+                            .svg(color: CustomColors.primary),
+                      ),
                     ),
                   ),
                   if (widget.catBreedImage?.url?.isNotEmpty ?? false)
@@ -100,7 +105,7 @@ class _ParallaxFlowDelegate extends FlowDelegate {
   @override
   void paintChildren(FlowPaintingContext context) {
     if (scrollable != null) {
-      // Calculate the position of this list item within the viewport.
+      /// Calculate the position of this list item within the viewport.
       final scrollableBox =
           scrollable!.context.findRenderObject()! as RenderBox;
       final listItemBox = listItemContext.findRenderObject()! as RenderBox;
@@ -108,18 +113,18 @@ class _ParallaxFlowDelegate extends FlowDelegate {
           listItemBox.size.centerLeft(Offset.zero),
           ancestor: scrollableBox);
 
-      // Determine the percent position of this list item within the
-      // scrollable area.
+      /// Determine the percent position of this list item within the
+      /// scrollable area.
       final viewportDimension = scrollable!.position.viewportDimension;
       final scrollFraction =
           (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
 
-      // Calculate the vertical alignment of the background
-      // based on the scroll percentage.
+      /// Calculate the vertical alignment of the background
+      /// based on the scroll percentage.
       final verticalAlignment = Alignment(0.0, scrollFraction * 2 - 1);
 
-      // Convert the background alignment into a pixel offset for
-      // painting purposes.
+      /// Convert the background alignment into a pixel offset for
+      /// painting purposes.
       final backgroundSize =
           (backgroundImageKey.currentContext!.findRenderObject()! as RenderBox)
               .size;
@@ -127,7 +132,7 @@ class _ParallaxFlowDelegate extends FlowDelegate {
       final childRect = verticalAlignment.inscribe(
           backgroundSize, Offset.zero & listItemSize);
 
-      // Paint the background.
+      /// Paint the background.
       context.paintChild(
         0,
         transform: Transform.translate(

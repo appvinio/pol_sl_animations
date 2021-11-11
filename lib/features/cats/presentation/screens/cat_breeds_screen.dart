@@ -27,7 +27,7 @@ class _CatBreedsScreenState extends State<CatBreedsScreen>
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       precachePicture(
         ExactAssetPicture(SvgPicture.svgStringDecoderBuilder,
-            Assets.images.catPlaceholderPng.path),
+            Assets.images.catPlaceholder.path),
         null,
       );
       precachePicture(
@@ -56,10 +56,6 @@ class _CatBreedsScreenState extends State<CatBreedsScreen>
         },
         child: Stack(
           children: [
-            ListView(
-              physics: const NeverScrollableScrollPhysics(),
-              children: [],
-            ),
             PagewiseGridBlocView<CatBreed, String, CatBreedsBloc>.count(
               bloc: catBreedsBloc,
               physics: const BouncingScrollPhysics(),
@@ -78,6 +74,8 @@ class _CatBreedsScreenState extends State<CatBreedsScreen>
                   );
                 } else if (state is RefreshPagewiseState) {
                   return const CatBreedLoadingWidget();
+                } else if (state is LoadMorePagewiseState) {
+                  return const Center(child: CircularProgressIndicator());
                 } else {
                   return const SizedBox();
                 }

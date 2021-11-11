@@ -59,6 +59,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Głośność`
+  String get vocalisation {
+    return Intl.message(
+      'Głośność',
+      name: 'vocalisation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Przyjazny dla psów`
+  String get dogFriendly {
+    return Intl.message(
+      'Przyjazny dla psów',
+      name: 'dogFriendly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Energia`
+  String get energyLevel {
+    return Intl.message(
+      'Energia',
+      name: 'energyLevel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inteligencja`
+  String get intelligence {
+    return Intl.message(
+      'Inteligencja',
+      name: 'intelligence',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Linienie`
+  String get sheddingLevel {
+    return Intl.message(
+      'Linienie',
+      name: 'sheddingLevel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wymagania socjalne`
+  String get socialNeeds {
+    return Intl.message(
+      'Wymagania socjalne',
+      name: 'socialNeeds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adaptacja`
+  String get adaptability {
+    return Intl.message(
+      'Adaptacja',
+      name: 'adaptability',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Szczegóły`
+  String get details {
+    return Intl.message(
+      'Szczegóły',
+      name: 'details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tak`
+  String get detailsYes {
+    return Intl.message(
+      'Tak',
+      name: 'detailsYes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nie`
+  String get detailsNo {
+    return Intl.message(
+      'Nie',
+      name: 'detailsNo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bezwłosy`
+  String get isHairless {
+    return Intl.message(
+      'Bezwłosy',
+      name: 'isHairless',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Naturalny`
+  String get isNatural {
+    return Intl.message(
+      'Naturalny',
+      name: 'isNatural',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hipoalergiczny`
+  String get isHypoallergenic {
+    return Intl.message(
+      'Hipoalergiczny',
+      name: 'isHypoallergenic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Przystosowany do życia w domu`
+  String get isIndoor {
+    return Intl.message(
+      'Przystosowany do życia w domu',
+      name: 'isIndoor',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
