@@ -5,8 +5,7 @@ import 'package:aplikacja_sklep/core/style/text_styles.dart';
 import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
 import 'package:aplikacja_sklep/features/cats/presentation/screens/cat_specific_screen.dart';
 import 'package:aplikacja_sklep/features/cats/presentation/widgets/cat_image.dart';
-import 'package:aplikacja_sklep/gen/assets.gen.dart';
-import 'package:fluro/fluro.dart';
+import 'package:aplikacja_sklep/features/cats/presentation/widgets/cat_list_element_like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikacja_sklep/generated/l10n.dart';
 
@@ -23,8 +22,6 @@ class CatListElement extends StatefulWidget {
 }
 
 class _CatListElementState extends State<CatListElement> {
-  bool isLiked = false;
-
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
@@ -125,40 +122,11 @@ class _CatListElementState extends State<CatListElement> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Align(
                     alignment: Alignment.topCenter,
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                        borderRadius: Borders.radius16All,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            borderRadius: Borders.radius16All,
-                            border: Border.all(
-                              color: CustomColors.greyColor,
-                              width: 1.5,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: (isLiked
-                                    ? Assets.images.catPaw
-                                    : Assets.images.catPawOutlined)
-                                .svg(
-                              height: 20,
-                              color: CustomColors.greyColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: CatListElementLikeButton(),
                   ),
                 ),
               ],
