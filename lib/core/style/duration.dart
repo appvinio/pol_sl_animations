@@ -1,4 +1,4 @@
-class Durations {
+abstract class Durations {
   static const notificationDuration = Duration(seconds: 2);
   static const blurAnimationDuration = duration200ms;
   static const Duration duration200ms = Duration(milliseconds: 200);

@@ -130,10 +130,10 @@ class S {
     );
   }
 
-  /// `Szczegóły`
+  /// `Details`
   String get details {
     return Intl.message(
-      'Szczegóły',
+      'Details',
       name: 'details',
       desc: '',
       args: [],
@@ -195,6 +195,118 @@ class S {
     return Intl.message(
       'Przystosowany do życia w domu',
       name: 'isIndoor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommended`
+  String get recommended {
+    return Intl.message(
+      'Recommended',
+      name: 'recommended',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Origin: `
+  String get origin {
+    return Intl.message(
+      'Origin: ',
+      name: 'origin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message(
+      'Male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message(
+      'Female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height: `
+  String get height {
+    return Intl.message(
+      'Height: ',
+      name: 'height',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight: `
+  String get weight {
+    return Intl.message(
+      'Weight: ',
+      name: 'weight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} kg`
+  String kilograms(Object value) {
+    return Intl.message(
+      '$value kg',
+      name: 'kilograms',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} cm`
+  String centimeters(Object value) {
+    return Intl.message(
+      '$value cm',
+      name: 'centimeters',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{years, plural, one{1 Year} other{{years} Years}}`
+  String yearsOld(num years) {
+    return Intl.plural(
+      years,
+      one: '1 Year',
+      other: '$years Years',
+      name: 'yearsOld',
+      desc: '',
+      args: [years],
+    );
+  }
+
+  /// `Adoption`
+  String get adoption {
+    return Intl.message(
+      'Adoption',
+      name: 'adoption',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pet`
+  String get pet {
+    return Intl.message(
+      'Pet',
+      name: 'pet',
       desc: '',
       args: [],
     );

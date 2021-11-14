@@ -1,5 +1,5 @@
 import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/screens/cat_breeds_screen.dart';
+import 'package:aplikacja_sklep/features/cats/presentation/screens/cats_screen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikacja_sklep/injection_container.dart';
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       ),
       navigatorObservers: [BotToastNavigatorObserver()],
       builder: BotToastInit(),
-      home: const CatBreedsScreen(),
+      home: const CatsScreen(),
     );
   }
 }

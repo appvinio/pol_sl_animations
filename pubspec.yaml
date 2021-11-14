@@ -57,6 +57,7 @@ dependencies:
   flutter_svg: 0.23.0+1
   cached_network_image: 3.1.0+1
   rive: 0.7.33
+  any_animated_button: 0.0.2
 
 dev_dependencies:
   build_runner: 2.1.2

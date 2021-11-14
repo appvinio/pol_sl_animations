@@ -61,7 +61,7 @@ abstract class AnyListBloc<Data, Search> extends ExtBloc<AnyListEvent, AnyListSt
       if (isRetrying) {
         error = null;
         hasMoreItems = true;
-        yield AnyListDataFetched(
+        yield AnyListDataFetched<Data?, Search?>(
           data: this.loadedItems,
           hasSingleData: false,
           singleData: null,
@@ -113,7 +113,7 @@ abstract class AnyListBloc<Data, Search> extends ExtBloc<AnyListEvent, AnyListSt
       }
       this.isFetching = false;
       if (this.loadedItems.isNotEmpty) {
-        yield AnyListDataFetched(
+        yield AnyListDataFetched<Data?, Search?>(
           data: List.from(this.loadedItems, growable: false),
           hasSingleData: false,
           singleData: null,

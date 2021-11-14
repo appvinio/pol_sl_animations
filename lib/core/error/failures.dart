@@ -15,3 +15,7 @@ abstract class Failure extends Equatable {
 class FetchCatBreedsFailure extends Failure {
   const FetchCatBreedsFailure();
 }
+
+class CatAdoptionErrorFailure extends Failure {
+  const CatAdoptionErrorFailure();
+}

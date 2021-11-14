@@ -74,6 +74,8 @@ class CustomTextStyle extends TextStyle {
 
   CustomTextStyle get s18 => copyWith(fontSize: 18);
 
+  CustomTextStyle get s20 => copyWith(fontSize: 20);
+
   CustomTextStyle get s21 => copyWith(fontSize: 21);
 
   CustomTextStyle get s22 => copyWith(fontSize: 22);
@@ -96,13 +98,15 @@ class CustomTextStyle extends TextStyle {
 
   CustomTextStyle get colorWhite => copyWith(color: CustomColors.whiteColor);
 
-  CustomTextStyle get colorHintDefault => copyWith(color: CustomColors.whiteColor);
+  CustomTextStyle get colorHintDefault =>
+      copyWith(color: CustomColors.whiteColor);
 
   CustomTextStyle get colorBlack => copyWith(color: CustomColors.blackColor);
 
-  CustomTextStyle get colorGrey => copyWith(color: CustomColors.greyColor);
+  CustomTextStyle get colorDarkGrey =>
+      copyWith(color: CustomColors.darkGreyColor);
 
-  CustomTextStyle get colorListText => copyWith(color: CustomColors.listText);
+  CustomTextStyle get colorGrey => copyWith(color: CustomColors.greyColor);
 
   CustomTextStyle get h17 => copyWith(height: 1.7);
 
@@ -110,7 +114,8 @@ class CustomTextStyle extends TextStyle {
 
   CustomTextStyle get ls1 => copyWith(letterSpacing: 1);
 
-  CustomTextStyle get underline => copyWith(decoration: TextDecoration.underline);
+  CustomTextStyle get underline =>
+      copyWith(decoration: TextDecoration.underline);
 
   @override
   CustomTextStyle copyWith({
@@ -141,8 +146,12 @@ class CustomTextStyle extends TextStyle {
   }) {
     return CustomTextStyle._(
       inherit: inherit ?? this.inherit,
-      color: this.foreground == null && foreground == null ? color ?? this.color : null,
-      backgroundColor: this.background == null && background == null ? backgroundColor ?? this.backgroundColor : null,
+      color: this.foreground == null && foreground == null
+          ? color ?? this.color
+          : null,
+      backgroundColor: this.background == null && background == null
+          ? backgroundColor ?? this.backgroundColor
+          : null,
       fontFamily: fontFamily ?? this.fontFamily,
       fontFamilyFallback: fontFamilyFallback ?? this.fontFamilyFallback,
       fontSize: fontSize ?? this.fontSize,
