@@ -85,7 +85,6 @@ class _CatsScreenState extends State<CatsScreen> with TickerProviderStateMixin {
                     ),
                     const SliverToBoxAdapter(child: ListSpacer()),
                     LiveSliverList(
-                      reAnimateOnVisibility: true,
                       visibleFraction: 0.05,
                       showItemInterval: Duration.zero,
                       showItemDuration: const Duration(milliseconds: 300),
