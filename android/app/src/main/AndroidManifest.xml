@@ -1,9 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fasuh.aplikacja_sklep">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <application
+    package="com.fasuh.adoption_app">
+   <application
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:aplikacja_sklep/core/presentation/widgets/default_error_widget.dart';
+import 'package:adoption_app/core/presentation/widgets/default_error_widget.dart';
 
 class DefaultErrorScreen extends StatelessWidget {
   const DefaultErrorScreen({

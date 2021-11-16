@@ -1,23 +1,20 @@
-import 'package:aplikacja_sklep/core/error/failures.dart';
-import 'package:aplikacja_sklep/core/presentation/blocs/any_list/any_list_bloc.dart';
-import 'package:aplikacja_sklep/core/usecase/usecase.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/domain/use_cases/fetch_products_use_case.dart';
+import 'package:adoption_app/core/error/failures.dart';
+import 'package:adoption_app/core/presentation/blocs/any_fetch_bloc/any_fetch_bloc.dart';
+import 'package:adoption_app/core/usecase/usecase.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/domain/use_cases/fetch_products_use_case.dart';
 import 'package:dartz/dartz.dart';
 
-class CatBreedsBloc extends AnyListBloc<CatBreed, String> {
+class CatBreedsBloc extends AnyFetchBloc<List<CatBreed>> {
   CatBreedsBloc({
     required this.fetchCatBreedsUseCase,
   });
 
-  @override
-  int get firstPageNum => 0;
-
   final FetchCatBreedsUseCase fetchCatBreedsUseCase;
 
   @override
-  Future<Either<Failure, List<CatBreed>>> fetchForPage(
-      int page, String? search) {
-    return fetchCatBreedsUseCase(PaginationParams(page: page));
+  Future<Either<Failure, List<CatBreed>>> fetchData(
+      DefaultAnyFetchEvent event) {
+    return fetchCatBreedsUseCase(const NoParams());
   }
 }

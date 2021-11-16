@@ -1,4 +1,4 @@
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed_image.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed_image.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'cat_breed_image.g.dart';

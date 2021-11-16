@@ -1,5 +1,5 @@
-import 'package:aplikacja_sklep/features/cats/data/model/cat_breed_image.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/data/model/cat_breed_image.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'cat_breed.g.dart';

@@ -1,12 +1,12 @@
 import 'package:any_animated_button/any_animated_button.dart';
-import 'package:aplikacja_sklep/core/style/borders.dart';
-import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/core/style/text_styles.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/blocs/adopt_cat/adopt_cat_bloc.dart';
-import 'package:aplikacja_sklep/injection_container.dart';
+import 'package:adoption_app/core/style/borders.dart';
+import 'package:adoption_app/core/style/colors.dart';
+import 'package:adoption_app/core/style/text_styles.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/presentation/blocs/adopt_cat/adopt_cat_bloc.dart';
+import 'package:adoption_app/injection_container.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikacja_sklep/generated/l10n.dart';
+import 'package:adoption_app/generated/l10n.dart';
 
 class AdoptCatButton extends StatefulWidget {
   const AdoptCatButton({

@@ -1,11 +1,11 @@
-import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/screens/cats_screen.dart';
+import 'package:adoption_app/core/style/colors.dart';
+import 'package:adoption_app/features/cats/presentation/screens/cats_screen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikacja_sklep/injection_container.dart';
-import 'package:aplikacja_sklep/core/navigator/navigator.dart';
+import 'package:adoption_app/injection_container.dart';
+import 'package:adoption_app/core/navigator/navigator.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:aplikacja_sklep/generated/l10n.dart';
+import 'package:adoption_app/generated/l10n.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

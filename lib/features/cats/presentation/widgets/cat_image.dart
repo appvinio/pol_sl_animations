@@ -1,5 +1,5 @@
-import 'package:aplikacja_sklep/core/style/borders.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed_image.dart';
+import 'package:adoption_app/core/style/borders.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 

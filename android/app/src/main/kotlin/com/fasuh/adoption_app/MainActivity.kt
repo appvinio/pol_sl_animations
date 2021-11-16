@@ -1,4 +1,4 @@
-package com.fasuh.aplikacja_sklep
+package com.fasuh.adoption_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,7 +1,7 @@
-import 'package:aplikacja_sklep/core/error/failures.dart';
-import 'package:aplikacja_sklep/core/usecase/usecase.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/domain/repositories/repository.dart';
+import 'package:adoption_app/core/error/failures.dart';
+import 'package:adoption_app/core/usecase/usecase.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/domain/repositories/repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

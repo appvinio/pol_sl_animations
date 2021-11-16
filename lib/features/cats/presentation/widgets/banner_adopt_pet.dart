@@ -1,6 +1,6 @@
-import 'package:aplikacja_sklep/core/style/borders.dart';
-import 'package:aplikacja_sklep/core/style/shadows.dart';
-import 'package:aplikacja_sklep/gen/assets.gen.dart';
+import 'package:adoption_app/core/style/borders.dart';
+import 'package:adoption_app/core/style/shadows.dart';
+import 'package:adoption_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class BannerAdoptPet extends StatelessWidget {

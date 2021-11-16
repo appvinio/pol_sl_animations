@@ -1,6 +1,6 @@
-import 'package:aplikacja_sklep/core/style/borders.dart';
-import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/gen/assets.gen.dart';
+import 'package:adoption_app/core/style/borders.dart';
+import 'package:adoption_app/core/style/colors.dart';
+import 'package:adoption_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class CatListElementLikeButton extends StatefulWidget {

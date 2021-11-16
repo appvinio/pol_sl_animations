@@ -1,4 +1,4 @@
-import 'package:aplikacja_sklep/gen/assets.gen.dart';
+import 'package:adoption_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class ListLoadingWidget extends StatelessWidget {

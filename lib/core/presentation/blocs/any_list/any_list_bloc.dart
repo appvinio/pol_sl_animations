@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:fimber/fimber.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:aplikacja_sklep/core/error/failures.dart';
+import 'package:adoption_app/core/error/failures.dart';
 
 part 'any_list_event.dart';
 

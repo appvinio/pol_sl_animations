@@ -1,4 +1,4 @@
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed_image.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed_image.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class CatBreed extends Equatable {

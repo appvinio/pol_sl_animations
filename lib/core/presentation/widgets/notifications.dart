@@ -1,10 +1,10 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikacja_sklep/core/error/failures.dart';
-import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/core/style/dimens.dart';
-import 'package:aplikacja_sklep/core/style/duration.dart';
-import 'package:aplikacja_sklep/core/style/text_styles.dart';
+import 'package:adoption_app/core/error/failures.dart';
+import 'package:adoption_app/core/style/colors.dart';
+import 'package:adoption_app/core/style/dimens.dart';
+import 'package:adoption_app/core/style/duration.dart';
+import 'package:adoption_app/core/style/text_styles.dart';
 
 void notification({
   required final String description,

@@ -29,35 +29,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "adaptability": MessageLookupByLibrary.simpleMessage("Adaptacja"),
         "adoption": MessageLookupByLibrary.simpleMessage("Adoption"),
         "centimeters": m0,
         "defaultError":
             MessageLookupByLibrary.simpleMessage("There was an error"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
-        "detailsNo": MessageLookupByLibrary.simpleMessage("Nie"),
-        "detailsYes": MessageLookupByLibrary.simpleMessage("Tak"),
-        "dogFriendly":
-            MessageLookupByLibrary.simpleMessage("Przyjazny dla psów"),
-        "energyLevel": MessageLookupByLibrary.simpleMessage("Energia"),
         "female": MessageLookupByLibrary.simpleMessage("Female"),
         "height": MessageLookupByLibrary.simpleMessage("Height: "),
-        "intelligence": MessageLookupByLibrary.simpleMessage("Inteligencja"),
-        "isHairless": MessageLookupByLibrary.simpleMessage("Bezwłosy"),
-        "isHypoallergenic":
-            MessageLookupByLibrary.simpleMessage("Hipoalergiczny"),
-        "isIndoor": MessageLookupByLibrary.simpleMessage(
-            "Przystosowany do życia w domu"),
-        "isNatural": MessageLookupByLibrary.simpleMessage("Naturalny"),
         "kilograms": m1,
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "origin": MessageLookupByLibrary.simpleMessage("Origin: "),
         "pet": MessageLookupByLibrary.simpleMessage("Pet"),
         "recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
-        "sheddingLevel": MessageLookupByLibrary.simpleMessage("Linienie"),
-        "socialNeeds":
-            MessageLookupByLibrary.simpleMessage("Wymagania socjalne"),
-        "vocalisation": MessageLookupByLibrary.simpleMessage("Głośność"),
         "weight": MessageLookupByLibrary.simpleMessage("Weight: "),
         "yearsOld": m2
       };

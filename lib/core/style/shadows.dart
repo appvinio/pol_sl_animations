@@ -1,4 +1,4 @@
-import 'package:aplikacja_sklep/core/style/colors.dart';
+import 'package:adoption_app/core/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 
 abstract class Shadows {

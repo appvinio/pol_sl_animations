@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:aplikacja_sklep/core/presentation/blocs/any_fetch_bloc/any_fetch_bloc.dart';
-import 'package:aplikacja_sklep/core/presentation/widgets/default_error_widget.dart';
+import 'package:adoption_app/core/presentation/blocs/any_fetch_bloc/any_fetch_bloc.dart';
+import 'package:adoption_app/core/presentation/widgets/default_error_widget.dart';
 
 class AnyFetchDecoder<T> extends StatelessWidget {
   const AnyFetchDecoder({

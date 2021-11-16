@@ -1,20 +1,21 @@
-import 'package:aplikacja_sklep/core/presentation/blocs/any_list/any_list_bloc.dart';
-import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/core/style/text_styles.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/blocs/cat_breeds/cat_breeds_bloc.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/banner_adopt_pet.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/cat_list_element.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/list_loading_widget.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/list_spacer.dart';
-import 'package:aplikacja_sklep/gen/assets.gen.dart';
-import 'package:aplikacja_sklep/injection_container.dart';
+import 'package:adoption_app/core/presentation/blocs/any_fetch_bloc/any_fetch_bloc.dart';
+import 'package:adoption_app/core/presentation/blocs/any_fetch_bloc/widgets/any_fetch_decoder.dart';
+import 'package:adoption_app/core/presentation/blocs/any_list/any_list_bloc.dart';
+import 'package:adoption_app/core/style/colors.dart';
+import 'package:adoption_app/core/style/text_styles.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/presentation/blocs/cat_breeds/cat_breeds_bloc.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/banner_adopt_pet.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/cat_list_element.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/list_loading_widget.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/list_spacer.dart';
+import 'package:adoption_app/gen/assets.gen.dart';
+import 'package:adoption_app/injection_container.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:aplikacja_sklep/generated/l10n.dart';
+import 'package:adoption_app/generated/l10n.dart';
 
 class CatsScreen extends StatefulWidget {
   const CatsScreen({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _CatsScreenState extends State<CatsScreen> with TickerProviderStateMixin {
         null,
       );
     });
-    catBreedsBloc = sl()..add(const AnyListRefreshEvent());
+    catBreedsBloc = sl()..add(const DefaultAnyFetchEvent());
     super.initState();
   }
 
@@ -54,14 +55,14 @@ class _CatsScreenState extends State<CatsScreen> with TickerProviderStateMixin {
     return Scaffold(
       backgroundColor: CustomColors.background,
       body: SafeArea(
-        child: BlocBuilder(
-          bloc: catBreedsBloc,
-          builder: (context, state) {
-            if (state is AnyListDataFetched<CatBreed?, String?>) {
+        child: AnyFetchDecoder(
+          anyFetchBloc: catBreedsBloc,
+          dataBuilder: (context, state) {
+            if (state is DataAnyFetchState<List<CatBreed>>) {
               return RefreshIndicator(
                 backgroundColor: CustomColors.refreshIndicator,
                 onRefresh: () async {
-                  catBreedsBloc.add(const AnyListRefreshEvent());
+                  catBreedsBloc.add(const DefaultAnyFetchEvent());
                 },
                 child: CustomScrollView(
                   physics: const BouncingScrollPhysics(),
@@ -107,7 +108,7 @@ class _CatsScreenState extends State<CatsScreen> with TickerProviderStateMixin {
                                 vertical: 8.0,
                               ),
                               child:
-                                  CatListElement(catBreed: state.data[index]!),
+                                  CatListElement(catBreed: state.data[index]),
                             ),
                           ),
                         );

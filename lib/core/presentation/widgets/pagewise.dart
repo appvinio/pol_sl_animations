@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pagewise/helpers/grid_helpers.dart';
-import 'package:aplikacja_sklep/core/error/failures.dart';
-import 'package:aplikacja_sklep/core/presentation/blocs/any_fetch_bloc/any_fetch_bloc.dart';
-import 'package:aplikacja_sklep/core/presentation/blocs/any_list/any_list_bloc.dart';
+import 'package:adoption_app/core/error/failures.dart';
+import 'package:adoption_app/core/presentation/blocs/any_fetch_bloc/any_fetch_bloc.dart';
+import 'package:adoption_app/core/presentation/blocs/any_list/any_list_bloc.dart';
 
 typedef ItemBuilder = Widget Function(BuildContext context, PagewiseListState entry);
 typedef RetryCallback = void Function();

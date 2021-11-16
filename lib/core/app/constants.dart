@@ -1,6 +1,4 @@
-abstract class HiveObjects {
-
-}
+abstract class HiveObjects {}
 
 abstract class RegExpPreset {
   /// Letters and numbers
@@ -8,6 +6,4 @@ abstract class RegExpPreset {
   static const email = r'^[\w\.]+@(([\w-]+\.)[\w]*).*$';
 }
 
-abstract class Constants {
-
-}
+abstract class Constants {}

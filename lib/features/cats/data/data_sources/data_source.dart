@@ -1,11 +1,10 @@
-import 'package:aplikacja_sklep/core/usecase/usecase.dart';
-import 'package:aplikacja_sklep/features/cats/data/model/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/domain/use_cases/adopt_cat_use_case_use_case.dart';
+import 'package:adoption_app/features/cats/data/model/cat_breed.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/domain/use_cases/adopt_cat_use_case_use_case.dart';
 import 'package:dio/dio.dart';
 
 abstract class DataSource {
-  Future<List<CatBreed>> fetchCatBreeds(PaginationParams params);
+  Future<List<CatBreed>> fetchCatBreeds();
 
   Future<bool> adoptCat(AdoptCatParam params);
 }
@@ -16,9 +15,9 @@ class DataSourceImpl extends DataSource {
   final Dio source;
 
   @override
-  Future<List<CatBreed>> fetchCatBreeds(PaginationParams params) async {
+  Future<List<CatBreed>> fetchCatBreeds() async {
     final result = await source.get('breeds', queryParameters: {
-      'page': params.page,
+      'page': 0,
       'limit': 20,
     });
 

@@ -1,16 +1,14 @@
-import 'package:aplikacja_sklep/core/navigator/navigator.dart';
-import 'package:aplikacja_sklep/core/style/borders.dart';
-import 'package:aplikacja_sklep/core/style/colors.dart';
-import 'package:aplikacja_sklep/core/style/shadows.dart';
-import 'package:aplikacja_sklep/core/style/text_styles.dart';
-import 'package:aplikacja_sklep/features/cats/domain/entities/cat_breed.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/adopt_cat_button.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/cat_image.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/cat_like_button.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/cat_specific_summary.dart';
-import 'package:aplikacja_sklep/features/cats/presentation/widgets/list_spacer.dart';
+import 'package:adoption_app/core/navigator/navigator.dart';
+import 'package:adoption_app/core/style/borders.dart';
+import 'package:adoption_app/core/style/colors.dart';
+import 'package:adoption_app/core/style/text_styles.dart';
+import 'package:adoption_app/features/cats/domain/entities/cat_breed.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/adopt_cat_button.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/cat_like_button.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/cat_specific_summary.dart';
+import 'package:adoption_app/features/cats/presentation/widgets/list_spacer.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikacja_sklep/generated/l10n.dart';
+import 'package:adoption_app/generated/l10n.dart';
 import 'package:flutter/rendering.dart';
 
 class CatSpecificScreen extends StatefulWidget with NavigatedScreen {
